@@ -1,0 +1,23 @@
+{
+  "name": "cois-pixel-art",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A full featured pixel-art editor",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "SpecRunner.html",
+    "spec",
+    "package.json"
+  ],
+  "dependencies": {
+    "cois-observable": "~1.0.0",
+    "cois-sprite-editor": "~1.1.0",
+    "cois-sprite-previewer": "~1.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "~2.1.3"
+  }
+}
