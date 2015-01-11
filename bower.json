@@ -15,7 +15,8 @@
   "dependencies": {
     "cois-observable": "~1.0.0",
     "cois-sprite-editor": "~1.1.0",
-    "cois-sprite-previewer": "~1.1.0"
+    "cois-sprite-previewer": "~1.1.0",
+    "cois-color-usage": "~1.0.1"
   },
   "devDependencies": {
     "jasmine": "~2.1.3"
