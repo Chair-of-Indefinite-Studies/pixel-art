@@ -26,4 +26,29 @@
 		model.changeBrushColor(element.getAttribute('data-entry'));
 	    });
 	});
+
+	var picker = new color.picker.Model(0,0,0);
+
+	picker.addWatch(document.getElementById('red'), 'red');
+
+	picker.addWatch(document.getElementById('green'), 'green');
+	
+	picker.addWatch(document.getElementById('blue'), 'blue');
+	
+	picker.addWatch(document.getElementById('alpha'), 'alpha');
+	
+	picker.on('colorPicked', function(color){
+		document.getElementById('color').style.backgroundColor = color;
+		model.changeBrushColor(color);
+		var gradientRange = picker.getColorRangeFor('red');
+		document.getElementById('red').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+		gradientRange = picker.getColorRangeFor('green');
+		document.getElementById('green').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+		gradientRange = picker.getColorRangeFor('blue');
+		document.getElementById('blue').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+		gradientRange = picker.getColorRangeFor('alpha');
+		document.getElementById('alpha').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';	
+
+	});
+
 })(sprite, color);
