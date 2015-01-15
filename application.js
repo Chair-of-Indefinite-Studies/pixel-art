@@ -1,7 +1,17 @@
 (function(sprite, color){
 	var model = new sprite.editor.Model(20, 30);
 
-	var canvas = document.getElementById('pixel-editor');
+	[
+		{ 'id': 'decrease-row', 'callback': function(){ model.decreaseRows() } },
+		{ 'id': 'increase-row', 'callback': function(){ model.increaseRows() } },
+		{ 'id': 'decrease-column', 'callback': function(){ model.decreaseColumns() } },
+		{ 'id': 'increase-column', 'callback': function(){ model.increaseColumns() } },
+	].forEach(function(data){
+		var element = document.getElementById(data.id);
+		element.addEventListener('click', data.callback);
+	});
+
+    var canvas = document.getElementById('pixel-editor');
 	var view = new sprite.editor.View(model, canvas);
 
 	var controller = sprite.editor.controllerFor(model, view, canvas);
@@ -32,11 +42,11 @@
 	picker.addWatch(document.getElementById('red'), 'red');
 
 	picker.addWatch(document.getElementById('green'), 'green');
-	
+
 	picker.addWatch(document.getElementById('blue'), 'blue');
-	
+
 	picker.addWatch(document.getElementById('alpha'), 'alpha');
-	
+
 	picker.on('colorPicked', function(color){
 		document.getElementById('color').style.backgroundColor = color;
 		model.changeBrushColor(color);
@@ -47,7 +57,7 @@
 		gradientRange = picker.getColorRangeFor('blue');
 		document.getElementById('blue').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
 		gradientRange = picker.getColorRangeFor('alpha');
-		document.getElementById('alpha').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';	
+		document.getElementById('alpha').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
 
 	});
 
