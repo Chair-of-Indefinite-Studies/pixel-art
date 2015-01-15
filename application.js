@@ -1,5 +1,5 @@
 (function(sprite, color){
-	var model = new sprite.editor.Model(20, 30);
+	var model = new sprite.editor.Model(16, 16);
 
 	[
 		{ 'id': 'decrease-row', 'callback': function(){ model.decreaseRows() } },
