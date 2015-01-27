@@ -42,13 +42,14 @@
     picker.addWatch(document.getElementById(color), color);
   });
 
-  picker.on('colorPicked', function(color){
+  function handleColorPicked(color){
     document.getElementById('color').style.backgroundColor = color;
     model.changeBrushColor(color);
     ['red', 'green', 'blue', 'alpha'].forEach(function(color){
       var gradientRange = picker.getColorRangeFor(color);
       document.getElementById(color).style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
     });
-  });
+  }
+  picker.on('colorPicked', handleColorPicked);
 
 })(sprite, color);
