@@ -15,7 +15,7 @@
   "dependencies": {
     "cois-observable": "~1.0.0",
     "cois-sprite-editor": "~1.2.1",
-    "cois-sprite-previewer": "~1.2.1",
+    "cois-sprite-previewer": "~1.3.0",
     "cois-color-usage": "~1.0.1",
     "cois-color-picker": "~1.1.0"
   },
