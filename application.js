@@ -51,5 +51,6 @@
         });
     }
     picker.on('colorPicked', handleColorPicked);
+    handleColorPicked('rgba(0,0,0,1)');
 
 })(sprite, color);
