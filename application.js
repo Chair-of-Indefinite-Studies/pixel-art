@@ -45,15 +45,10 @@
   picker.on('colorPicked', function(color){
     document.getElementById('color').style.backgroundColor = color;
     model.changeBrushColor(color);
-    var gradientRange = picker.getColorRangeFor('red');
-    document.getElementById('red').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
-    gradientRange = picker.getColorRangeFor('green');
-    document.getElementById('green').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
-    gradientRange = picker.getColorRangeFor('blue');
-    document.getElementById('blue').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
-    gradientRange = picker.getColorRangeFor('alpha');
-    document.getElementById('alpha').style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
-
+    ['red', 'green', 'blue', 'alpha'].forEach(function(color){
+      var gradientRange = picker.getColorRangeFor(color);
+      document.getElementById(color).style.backgroundImage = '-moz-linear-gradient(left, ' + gradientRange.low + ', ' + gradientRange.high + ')';
+    });
   });
 
 })(sprite, color);
