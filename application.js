@@ -38,14 +38,9 @@
   });
 
   var picker = new color.picker.Model(0,0,0);
-
-  picker.addWatch(document.getElementById('red'), 'red');
-
-  picker.addWatch(document.getElementById('green'), 'green');
-
-  picker.addWatch(document.getElementById('blue'), 'blue');
-
-  picker.addWatch(document.getElementById('alpha'), 'alpha');
+  ['red', 'green', 'blue', 'alpha'].forEach(function(color){
+    picker.addWatch(document.getElementById(color), color);
+  });
 
   picker.on('colorPicked', function(color){
     document.getElementById('color').style.backgroundColor = color;
