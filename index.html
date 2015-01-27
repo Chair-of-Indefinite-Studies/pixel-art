@@ -1,36 +1,34 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>Pixel Art</title>
-		<link rel="stylesheet" href="css/pixel-art.css"/>
-	</head>
-	<body>
-		<h1>Pixel Art</h1>
-		<section>
-		<div>
-			<button id="decrease-row">-</button>Row<button id="increase-row">+</button>
-			<button id="decrease-column">-</button>Column<button id="increase-column">+</button>
-		<div>
-			<canvas id="pixel-editor" class="editor" width="480" height="480"></canvas>
-			<canvas id="pixel-preview" width="30" height="30"></canvas>
-			<div id="color-usage" class="color usage container"></div>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Pixel Art</title>
+    <link rel="stylesheet" href="css/pixel-art.css"/>
+  </head>
+  <body>
+    <h1>Pixel Art</h1>
+    <section>
+      <div>
+        <button id="decrease-row">-</button>Row<button id="increase-row">+</button>
+        <button id="decrease-column">-</button>Column<button id="increase-column">+</button>
+      <div>
+      <canvas id="pixel-editor" class="editor" width="480" height="480"></canvas>
+      <canvas id="pixel-preview" width="30" height="30"></canvas>
+      <div id="color-usage" class="color usage container"></div>
+        <input type="range" id="red" name="red" min="0" max="255">
+        <input type="range" id="green" name="blue" min="0" max="255">
+        <input type="range" id="blue" name="blue" min="0" max="255">
+        <input type="range" id="alpha" name="alpha" min="0" max="1" step="0.05">
+        <div id="color" style="width: 100px; height: 100px; display: block;">
+      </div>
+    </section>
+    <script type="text/javascript" src="bower_components/cois-observable/cois-observable.min.js"></script>
+    <script type="text/javascript" src="bower_components/cois-sprite-editor/sprite.editor.min.js"></script>
+    <script type="text/javascript" src="bower_components/cois-color-array/color-array.min.js"></script>
+    <script type="text/javascript" src="bower_components/cois-sprite-previewer/sprite.previewer.min.js"></script>
+    <script type="text/javascript" src="bower_components/cois-color-usage/color-usage.min.js"></script>
+    <script type="text/javascript" src="bower_components/cois-color-picker/color.picker.min.js"></script>
 
-			<input type="range" id="red" name="red" min="0" max="255">
-			<input type="range" id="green" name="blue" min="0" max="255">
-			<input type="range" id="blue" name="blue" min="0" max="255">
-			<input type="range" id="alpha" name="alpha" min="0" max="1" step="0.05">
-
-			<div id="color" style="width: 100px; height: 100px; display: block;"></div>
-
-		</section>
-		<script type="text/javascript" src="bower_components/cois-observable/cois-observable.min.js"></script>
-		<script type="text/javascript" src="bower_components/cois-sprite-editor/sprite.editor.min.js"></script>
-		<script type="text/javascript" src="bower_components/cois-color-array/color-array.min.js"></script>
-		<script type="text/javascript" src="bower_components/cois-sprite-previewer/sprite.previewer.min.js"></script>
-		<script type="text/javascript" src="bower_components/cois-color-usage/color-usage.min.js"></script>
-		<script type="text/javascript" src="bower_components/cois-color-picker/color.picker.min.js"></script>
-
-		<script type="text/javascript" src="application.js"></script>
-	</body>
+    <script type="text/javascript" src="application.js"></script>
+  </body>
 </html>
